@@ -7,7 +7,7 @@ export function escapar(
     descriptor.value = function(...args: any[]){
         let retorno = metodoOriginal.apply(this, args);
         if(typeof retorno === 'string'){
-            console.log(`@escape em ação na calsse ${this.constructor.name} para o metodo ${propertykey} `)
+            // console.log(`@escape em ação na calsse ${this.constructor.name} para o metodo ${propertykey} `)
             retorno = retorno.replace(/<script>[\s\S]*?<\/script>/, '');
         }
         return retorno;
